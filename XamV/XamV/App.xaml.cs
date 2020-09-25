@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamV.Views;
+
 
 namespace XamV
 {
@@ -10,7 +12,8 @@ namespace XamV
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginPage()); 
+
         }
 
         protected override void OnStart()

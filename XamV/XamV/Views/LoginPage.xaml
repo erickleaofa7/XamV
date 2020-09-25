@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamV.Views.LoginPage"
+             Title="inicio">
+    <ContentPage.Content>
+        <StackLayout  Padding="20,30,20,10">
+            <Label 
+                Text="Lands"  
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Center">
+            </Label>
+            <Image 
+                Source="onu"
+                WidthRequest="200">
+            </Image>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Text="E-Mail"  
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Placeholder="enter your e-mail"
+                    Keyboard="Email">
+                </Entry>
+                <Label 
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Password"  
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Placeholder="enter your password"
+                    IsPassword="True">
+                </Entry>
+
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                   Text="remenber password"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand">
+                </Label>
+                <Switch HorizontalOptions="End">
+                    
+                </Switch>
+            </StackLayout>
+            
+
+            <ActivityIndicator>
+                
+            </ActivityIndicator>
+            <StackLayout Margin="40,0">
+                <Button Text="login"
+                    BackgroundColor="#89da59"
+                    TextColor="White"
+                    BorderRadius="20">
+                </Button>
+                <Button Text="Register"
+                    BackgroundColor="#80bd9e"
+                    TextColor="White"
+                    BorderRadius="20">
+                </Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="Facebook"
+                       HeightRequest="50">
+                </Image>
+                <Image Source="twiter"
+                       HeightRequest="60"
+                </Image>
+            </StackLayout>
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
