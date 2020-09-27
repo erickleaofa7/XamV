@@ -3,22 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamV.Views.LoginPage"
              BindingContext="{Binding Main,Source={StaticResource Locator}}"
-             Title="inicio">
+             Title="Lands">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView BindingContext="{Binding Login }">
             <StackLayout  Padding="20,30,20,10">
-                <Label 
-                Text="Lands"  
-                FontSize="Large"
-                FontAttributes="Bold"
-                HorizontalOptions="Center">
-                </Label>
+            
                 <Image 
                 Source="onu"
                 WidthRequest="200">
                 </Image>
 
-                <Grid>
+                <Grid Margin="0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -35,7 +30,8 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Placeholder="enter your e-mail"
-                    Keyboard="Email">
+                    Keyboard="Email"
+                        Text="{Binding email,Mode=TwoWay}">
                     </Entry>
                     <Label 
                     Grid.Row="1"
@@ -49,15 +45,14 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     Placeholder="enter your password"
-                    IsPassword="True">
+                    IsPassword="True"
+                        Text="{Binding password,Mode=TwoWay}">
                     </Entry>
                 </Grid>
-                <ActivityIndicator>
-                </ActivityIndicator>
+                
                 <Label Text="forgot your password?"
                        HorizontalOptions="Center"
                        TextColor="Navy">
-                    
                 </Label>
                 <StackLayout Orientation="Horizontal">
                     <Label 
@@ -65,19 +60,24 @@
                     VerticalOptions="Center"
                     HorizontalOptions="StartAndExpand">
                     </Label>
-                    <Switch HorizontalOptions="End">
+                    <Switch HorizontalOptions="End"
+                            IsToggled="{Binding isRemember,Mode=TwoWay}">
                     </Switch>
                 </StackLayout>
-                <StackLayout Margin="40,0">
+                <StackLayout  Orientation="Horizontal">
                     <Button Text="login"
                     BackgroundColor="#89da59"
                     TextColor="White"
-                    BorderRadius="20">
+                    BorderRadius="20"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding isEnabled,Mode=TwoWay}"
+                    Command="{Binding loginComand}">
                     </Button>
                     <Button Text="Register"
                     BackgroundColor="#80bd9e"
                     TextColor="White"
-                    BorderRadius="20">
+                    BorderRadius="20"
+                            HorizontalOptions="FillAndExpand">
                     </Button>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
