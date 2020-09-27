@@ -4,6 +4,8 @@ using System.Text;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
+using XamV.Views;
+
 using System.ComponentModel;
 
 namespace XamV.ViewModels
@@ -78,6 +80,13 @@ namespace XamV.ViewModels
                 this.email = string.Empty;
                 return;
             }
+            else
+            {
+                MainViewModel.GetInstance().Lands = new LandsViewModel();
+                await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+
+            }
+
 
         }
 
@@ -86,7 +95,7 @@ namespace XamV.ViewModels
         #region Constructor
         public LoginViewModel()
         {
-            this.isRemember = true;
+            this.isRemember = false;
             this.isEnabled = true;
         }
 
